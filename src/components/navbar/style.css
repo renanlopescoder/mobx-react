@@ -1,0 +1,81 @@
+.appBar {
+  margin-bottom: 1.5rem;
+  height: 70px !important;
+  font-size: 14px;
+  font-weight: 600;
+  color: #ac9ec0 !important;
+  box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.5) !important;
+  background-color: #fff;
+}
+
+.appBar nav {
+  margin-left: 180px;
+}
+
+.appBar a {
+  margin-right: 20px;
+}
+
+.appBar h1 {
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.link {
+  text-decoration: none;
+  margin: 0!important;
+  padding: 0!important;
+}
+
+.appBar h1 {
+  font-size: 0;
+  display: block;
+  width: 200px;
+  height: 100%;
+  background-image: url('../../assets/images/mobx-react-logo.png');
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: center;
+}
+
+.appBar h1 + div {
+  position: absolute;
+  height: 100%;
+  right: 20px;
+  top: 0;
+  display: flex;
+  align-items: center;
+}
+
+.appBar h1 + div button {
+  background: none !important;
+  box-shadow: none !important;
+}
+
+.userInfo {
+  position: absolute;
+  right: 30px;
+  bottom: 20%;
+}
+
+.neutral:not([disabled]).flat,
+.neutral:not([disabled]).toggle {
+  color: #fff;
+}
+
+.navigation a{
+  border-radius: 50px;
+  background-color: #37003f;
+  text-decoration: none;
+  text-align: center;
+  color: #fff;
+  padding: 8px 20px;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: bolder;
+}
