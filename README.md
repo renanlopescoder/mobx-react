@@ -1,6 +1,7 @@
-![MobX React logo](https://cdn-images-1.medium.com/max/897/1*fVyLVvnbisXOgh1v3EhTrg.png)
 
 # MobX React
+
+![MobX React logo](http://mobx-react.herokuapp.com/static/media/mobx-react-logo.20a9fc8d.png)
 
 - Front End with React, MobX and mobx-state-tree
 
@@ -8,7 +9,7 @@
 - Rest API with Node Express and MongoDB
 - Cloud with Heroku and mLab
 
-| Api | GitHub |
+| Rest API URL | Rest API Code |
 |--|--|
 | https://rest-api-node.herokuapp.com | https://github.com/renanlopescoder/rest-api-node |
 
@@ -23,20 +24,15 @@
 Airbnb React: https://github.com/airbnb/javascript/tree/master/react
 
 #### Project Architecture
-##### MobX
-- Stores
--- actions - Actions manipulate shared state and connect api and models of the store
--- views - Views manipulate only view data
--- models - Models require data type format
+##### MobX Stores
+- actions - Actions manipulate shared state and connect api and models of the store
+- models - Models require data type format
 
 ##### Requests
-- requests
--- Http request to handle with AJAX requests
+- Http request to handle with AJAX requests
 
 ##### Shared
-- shared
--- Default styles shared of the project
+- Default styles shared of the project
 
 ##### Helpers
-- helpers
--- Shared logics to use in the project
+- Shared logics to use in the project
