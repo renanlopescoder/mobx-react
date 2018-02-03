@@ -2,15 +2,15 @@ import React from 'react'
 import renderer from 'react-test-renderer'
 import { MemoryRouter } from 'react-router-dom'
 
-import SampleStore from '../../stores/SampleStore'
-import SampleList from '../../views/sample/SampleList'
+import ProjectStore from '../../../stores/ProjectStore'
+import ProjectList from '../../../views/project/ProjectList'
 
-describe('view/<SampleList />', () => {
-  const sampleStore = SampleStore.create()
+describe('view/<ProjectList />', () => {
+  const projectStore = ProjectStore.create()
   it('should render the question header', () => {
     const component = renderer.create(
       <MemoryRouter>
-        <SampleList sampleStore={sampleStore} />
+        <ProjectList projectStore={projectStore} />
       </MemoryRouter>,
     )
     const json = component.toJSON()

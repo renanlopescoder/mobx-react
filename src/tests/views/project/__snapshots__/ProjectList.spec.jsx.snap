@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`view/<SampleList /> should render the question header 1`] = `
+exports[`view/<ProjectList /> should render the question header 1`] = `
 <div
   className="container-fluid"
 >
@@ -15,7 +15,7 @@ exports[`view/<SampleList /> should render the question header 1`] = `
         <h5
           className={undefined}
         >
-          Sample List
+          Project List
         </h5>
       </div>
     </div>

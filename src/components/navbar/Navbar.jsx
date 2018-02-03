@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { AppBar, IconButton, Navigation, FontIcon, IconMenu, MenuItem, MenuDivider, Avatar } from 'react-toolbox';
+import { AppBar, Navigation, IconMenu, MenuItem, MenuDivider, Avatar } from 'react-toolbox';
 
 import style from './style.css';
 import color from '../../shared/colors.css';
@@ -31,10 +31,10 @@ class Navbar extends React.Component {
           MobX React
         </h1>
         <Navigation type="horizontal">
-          <Avatar className={[style.userInfo, color.primary]} icon="person" title='Renan Lopes'/>
+          <Avatar className={[style.userInfo, color.primary].join(' ')} icon="person" title='Renan Lopes'/>
         </Navigation>
       </AppBar>
-    )
+    );
   };
 };
 
