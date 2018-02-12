@@ -10,8 +10,8 @@ import style from './style.css';
 @observer
 class LoginView extends React.Component {
   state = {
-    email:'renanlopescoder@gmail.com',
-    password: '123',
+    email:'',
+    password: '',
     username: '',
     nickname: '',
     photo: '',
@@ -24,7 +24,6 @@ class LoginView extends React.Component {
     this.props.userStore.signin(this.state.email, this.state.password).then(
       success => this.props.history.push('/home')
     ).catch((error) => {
-      console.log(error)
       this.setState({ snackbarActive: true, snackbarMessage: 'Login or password mismatch' });
     });
   };
