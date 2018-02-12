@@ -7,6 +7,6 @@ import color from '../../shared/colors.css'
 
 export default props => (
   <Link to={props.to}>
-    <Button className={[style.fixedButton, color.green].join(' ')} icon='add' floating />
+    <Button className={[style.fixedButton, color.primary].join(' ')} icon='add' floating {...props} />
   </Link>
 )

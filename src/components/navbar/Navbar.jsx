@@ -20,7 +20,7 @@ class Navbar extends React.Component {
           <Link to='/users' className={style.link}>
             <MenuItem value='users' icon='people' caption='Users' />
           </Link>
-          <Link to='/' className={style.link}>
+          <Link to='/user/form' className={style.link}>
             <MenuItem value='configuration' icon='settings' caption='Configuration' />
           </Link>
           <MenuDivider />

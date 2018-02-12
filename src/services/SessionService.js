@@ -15,7 +15,7 @@ class SessionService {
   }
 
   static initSession(user) {
-    this.set('_id', user.id)
+    this.set('_id', user._id)
     this.set('email', user.email)
     this.set('username', user.username)
     this.set('nickname', user.nickname)

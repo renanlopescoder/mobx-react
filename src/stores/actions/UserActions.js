@@ -2,7 +2,12 @@ import { flow } from 'mobx-state-tree';
 
 import { ErrorTracker } from '../../helpers';
 import { SessionService } from '../../services';
-import { fetchUserListRequest, createUserRequest, signinRequest } from '../../requests';
+import {
+  fetchUserListRequest,
+  createUserRequest,
+  signinRequest,
+  updateUserRequest,
+} from '../../requests';
 import User from '../models/User'
 
 /* eslint-disable no-param-reassign */
@@ -53,7 +58,22 @@ const UserActions =(self) => {
     }
   );
 
-  return { fetchUserList, signin, signup };
+  const updateUser = flow(
+    function* updateUser(user) {
+      self.loading = true;
+      try {
+        const userModel = User.create(user);
+        yield updateUserRequest(userModel);
+      } catch (error) {
+        throw error;
+        ErrorTracker.error(error);
+      } finally {
+        self.loading = false;
+      };
+    }
+  );
+
+  return { fetchUserList, signin, signup, updateUser };
 };
 
 export default UserActions;

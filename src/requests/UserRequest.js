@@ -10,8 +10,12 @@ const createUserRequest = user =>
 const signinRequest = (email, password) =>
   clientHttp.post(apiPaths.users.signin, {email, password}).then(response => response.data)
 
+const updateUserRequest = user =>
+  clientHttp.put(`${apiPaths.users.update}/${user._id}`, user).then(response => response.data)
+
 export {
   fetchUserListRequest,
   createUserRequest,
   signinRequest,
+  updateUserRequest,
 };

@@ -2,7 +2,7 @@ import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 
 import { Navbar } from '../components';
-import { ProjectList, ProjectForm, Login, UserList } from '../views';
+import { ProjectList, ProjectForm, Login, UserList, UserForm } from '../views';
 
 const Home = () => (
   <div>
@@ -33,11 +33,17 @@ const Routes = () => (
     <Route exact path="/projects"
       component={props => withAppBar(<ProjectList {...props} />)}
     />
-    <Route exact path="/projects/new"
+    <Route exact path="/project/form"
+      component={props => withAppBar(<ProjectForm {...props} />)}
+    />
+    <Route exact path="/project/form/:id"
       component={props => withAppBar(<ProjectForm {...props} />)}
     />
     <Route exact path="/users"
       component={props => withAppBar(<UserList {...props} />)}
+    />
+    <Route exact path="/user/form"
+      component={props => withAppBar(<UserForm {...props} />)}
     />
   </Switch>
 );
