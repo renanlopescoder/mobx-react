@@ -7,7 +7,7 @@ class Loader extends React.Component {
   render() {
     return (
       this.props.loading ?
-        <ProgressBar className={style.center} type='circular' mode='indeterminate' multicolor />
+        <ProgressBar className={style.center} type='circular' mode='indeterminate' />
       : this.props.children
     );
   };

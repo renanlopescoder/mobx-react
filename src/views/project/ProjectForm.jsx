@@ -77,6 +77,8 @@ class ProjectForm extends React.Component {
       label='Todos os campos são obrigatórios'
       onClick={this.handleSnackbarClick}
       active={this.state.activeSnackbar}
+      type='warning'
+      action='Close'
     />
   );
 

@@ -3,7 +3,7 @@ import { inject, observer } from 'mobx-react';
 import { Grid } from 'react-flexbox-grid';
 import { CardTitle, CardText, Table, TableHead, TableCell, TableRow } from 'react-toolbox';
 
-import { Loader, Card } from '../../components';
+import { Loader, Card, AddButton } from '../../components';
 
 @inject('projectStore')
 @observer
@@ -42,10 +42,11 @@ class ProjectList extends React.Component {
             <Loader loading={this.props.projectStore.loading}>
               <Table selectable={false}>
                 {this.getTableHead()}
-                {this.props.projectStore.projects.map(project => (
+                {this.props.projectStore.projects.values().map(project => (
                   this.getTableBody(project)
                 ))}
               </Table>
+              <AddButton to='/projects/new'/>
             </Loader>
           </CardText>
         </Card>

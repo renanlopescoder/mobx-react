@@ -1,7 +1,23 @@
 .primary {
-  background-color: #FF8051;
+  background-color: #0083DD!important;
 }
 
 .primaryText {
-  color: #FF8051;
+  color: #0083DD!important;
+}
+
+.secondary {
+  background-color: #7160C1!important;
+}
+
+.secondaryText {
+  color: #7160C1!important;
+}
+
+.green {
+  background-color: #00C9B7!important;
+}
+
+.greenText {
+  color: #00C9B7!important;
 }

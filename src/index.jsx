@@ -4,12 +4,16 @@ import { Provider } from 'mobx-react';
 
 import App from './main/App';
 import registerServiceWorker from './registerServiceWorker';
-import ProjectStore from './stores/ProjectStore';
+import {
+  ProjectStore,
+  UserStore,
+} from './stores';
 
-const projectStore = ProjectStore.create();
+const projectStore = ProjectStore.create({ projects: {} });
+const userStore = UserStore.create({ users: {} });
 
 ReactDOM.render(
-  <Provider projectStore={projectStore}>
+  <Provider projectStore={projectStore} userStore={userStore}>
     <App />
   </Provider>,
   document.getElementById('root')

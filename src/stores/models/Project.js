@@ -3,7 +3,7 @@ import { types } from 'mobx-state-tree';
 const ProjectModel = types.model(
   'ProjectModel',
   {
-    _id: types.maybe(types.string),
+    _id: types.maybe(types.identifier(types.string)),
     author: types.string,
     demoLink: types.string,
     description: types.string,

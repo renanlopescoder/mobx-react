@@ -1,10 +1,11 @@
-import { clientHttp, ErrorTracker } from '../helpers';
+import { clientHttp, apiPaths } from '../services'
+import { ErrorTracker } from '../helpers';
 
 const fetchProjectListRequest = () =>
-  clientHttp.get(`/list/projects`).then(response => response.data)
+  clientHttp.get(apiPaths.projects.list).then(response => response.data)
 
   const createProjectRequest = (project) =>
-  clientHttp.post(`/create/project`, project).then(response => response.data)
+  clientHttp.post(apiPaths.projects.create, project).then(response => response.data)
 
 export {
   fetchProjectListRequest,

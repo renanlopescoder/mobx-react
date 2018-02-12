@@ -1,5 +1,5 @@
 module.exports = {
-  'color-primary': '#FF8051',
+  'color-primary': '#0083DD',
   'font-size': '13px',
   'appbar-color': 'var(--color-primary)',
   'color-accent': '#aa49ff',

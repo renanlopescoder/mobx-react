@@ -1,0 +1,9 @@
+
+.fixedButton {
+  font-size: 20px;
+  position: fixed;
+  bottom: 15px;
+  right: 20px;
+  min-width: inherit;
+  color: white!important;
+}

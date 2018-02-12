@@ -5,8 +5,7 @@ import ProjectActions from './actions/ProjectActions';
 
 const ProjectStore = types.model('ProjectStore', {
   loading: types.maybe(types.boolean),
-  projects: types.optional(types.array(Project), []),
-  project: types.maybe(types.reference(Project)),
+  projects: types.map(Project)
 })
 .actions(ProjectActions);
 

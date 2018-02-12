@@ -2,17 +2,11 @@ import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 
 import { Navbar } from '../components';
-import { ProjectList, ProjectForm } from '../views';
+import { ProjectList, ProjectForm, Login, UserList } from '../views';
 
 const Home = () => (
   <div>
     <h2>Home</h2>
-  </div>
-);
-
-const Login = () => (
-  <div>
-    <h2>Project Login Screen</h2>
   </div>
 );
 
@@ -31,9 +25,9 @@ const withAppBar = jsxComponent => (
 
 const Routes = () => (
   <Switch>
-    <Route exact path="/login" component={props => <Login {...props} />} />
+    <Route exact path="/" component={props => <Login {...props} />} />
     <Route exact path="/logout" component={props => <Logout {...props} />} />
-    <Route exact path="/"
+    <Route exact path="/home"
       component={props => withAppBar(<Home {...props} />)}
     />
     <Route exact path="/projects"
@@ -41,6 +35,9 @@ const Routes = () => (
     />
     <Route exact path="/projects/new"
       component={props => withAppBar(<ProjectForm {...props} />)}
+    />
+    <Route exact path="/users"
+      component={props => withAppBar(<UserList {...props} />)}
     />
   </Switch>
 );

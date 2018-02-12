@@ -11,7 +11,8 @@ const ProjectActions =(self) => {
     function* fetchProjectList() {
       self.loading = true;
       try {
-        self.projects = yield fetchProjectListRequest();
+        const projects = yield fetchProjectListRequest();
+        projects.map(project => self.projects.put(project))
       } catch (error) {
         ErrorTracker.error(error);
       } finally {
