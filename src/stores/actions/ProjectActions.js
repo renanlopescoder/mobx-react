@@ -1,6 +1,6 @@
 import { flow } from 'mobx-state-tree';
 
-import { ErrorTracker, removeJsonEmptyFields } from '../../helpers';
+import { ErrorTracker } from '../../helpers';
 import {
   fetchProjectListRequest,
   createProjectRequest,

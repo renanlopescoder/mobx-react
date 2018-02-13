@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { Grid } from 'react-flexbox-grid';
 import { CardTitle, CardText, Table, TableHead, TableCell, TableRow, IconButton } from 'react-toolbox';
 
+import ProjectSearchForm from './ProjectSearchForm'
 import { Loader, Card, AddButton } from '../../components';
 import color from '../../shared/colors.css';
 
@@ -12,6 +13,9 @@ import color from '../../shared/colors.css';
 class ProjectList extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      query: {}
+    };
     props.projectStore.fetchProjectList();
   };
 
@@ -21,8 +25,12 @@ class ProjectList extends React.Component {
       <TableCell>Name</TableCell>
       <TableCell>Description</TableCell>
       <TableCell>GitHub Link</TableCell>
+      <TableCell>DEMO Link</TableCell>
+      <TableCell>Technologies</TableCell>
+      <TableCell>Status</TableCell>
       <TableCell>Author</TableCell>
-      <TableCell>Action</TableCell>
+      <TableCell>Author Link</TableCell>
+      <TableCell>Actions</TableCell>
     </TableHead>
   );
 
@@ -32,7 +40,11 @@ class ProjectList extends React.Component {
       <TableCell>{project.project}</TableCell>
       <TableCell>{project.description}</TableCell>
       <TableCell>{project.githubLink}</TableCell>
+      <TableCell>{project.demoLink}</TableCell>
+      <TableCell>{project.technologies}</TableCell>
+      <TableCell>{project.status}</TableCell>
       <TableCell>{project.author}</TableCell>
+      <TableCell>{project.authorLink}</TableCell>
       <TableCell>
         <Link to={`/project/form/${project._id}`}>
           <IconButton className={color.secondaryText} icon='edit'  />
@@ -42,16 +54,21 @@ class ProjectList extends React.Component {
     </TableRow>
   );
 
+  search = query => {
+    this.setState({query});
+  };
+
   render() {
     return (
       <Grid fluid>
+        <ProjectSearchForm search={this.search} />
         <Card>
           <CardTitle title='Project List' />
           <CardText>
             <Loader loading={this.props.projectStore.loading}>
               <Table selectable={false}>
                 {this.getTableHead()}
-                {this.props.projectStore.projects.values().map(project => (
+                {this.props.projectStore.projectList(this.state.query).map(project => (
                   this.getTableBody(project)
                 ))}
               </Table>
