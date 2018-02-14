@@ -72,7 +72,7 @@ class ProjectSearchForm extends React.Component {
             <Input
               value={this.state._id}
               label='ID'
-              onChange={change => this.handleState(_id, change)}
+              onChange={change => this.handleState('_id', change)}
               icon ='search'
             />
           </Col>

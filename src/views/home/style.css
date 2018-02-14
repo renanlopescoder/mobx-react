@@ -1,0 +1,8 @@
+.background {
+  background: linear-gradient(to right top, #0083dd, #377bd8, #4f72d2, #6269ca, #7160c1);
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  position: absolute;
+}

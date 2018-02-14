@@ -2,19 +2,7 @@ import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 
 import { Navbar } from '../components';
-import { ProjectList, ProjectForm, Login, UserList, UserForm } from '../views';
-
-const Home = () => (
-  <div>
-    <h2>Home</h2>
-  </div>
-);
-
-const Logout = () => (
-  <div>
-    <h2>Project Logout Screen</h2>
-  </div>
-);
+import { ProjectList, ProjectForm, Login, UserList, UserForm, Home } from '../views';
 
 const withAppBar = jsxComponent => (
   <div>

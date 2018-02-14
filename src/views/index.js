@@ -4,6 +4,7 @@ import ProjectList from './project/ProjectList';
 import Login from './login/Login';
 import UserList from './user/UserList';
 import UserForm from './user/UserForm';
+import Home from './home/Home';
 
 export {
   ProjectShow,
@@ -12,4 +13,5 @@ export {
   Login,
   UserList,
   UserForm,
+  Home,
 };
