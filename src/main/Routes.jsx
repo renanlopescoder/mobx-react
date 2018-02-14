@@ -1,8 +1,16 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
+import { Provider } from 'mobx-react';
 
 import { Navbar } from '../components';
 import { ProjectList, ProjectForm, Login, UserList, UserForm, Home } from '../views';
+import {
+  ProjectStore,
+  UserStore,
+} from '../stores';
+
+const projectStore = ProjectStore.create({ projects: {} });
+const userStore = UserStore.create({ users: {} });
 
 const withAppBar = jsxComponent => (
   <div>
@@ -13,25 +21,48 @@ const withAppBar = jsxComponent => (
 
 const Routes = () => (
   <Switch>
-    <Route exact path="/" component={props => <Login {...props} />} />
-    <Route exact path="/logout" component={props => <Logout {...props} />} />
+    <Route exact path="/" component={props => (
+      <Provider userStore={userStore}>
+        <Login {...props} />
+      </Provider>
+    )} />
     <Route exact path="/home"
       component={props => withAppBar(<Home {...props} />)}
     />
     <Route exact path="/projects"
-      component={props => withAppBar(<ProjectList {...props} />)}
+      component={props => withAppBar(
+        <Provider projectStore={projectStore}>
+          <ProjectList {...props} />
+        </Provider>
+      )}
     />
     <Route exact path="/project/form"
-      component={props => withAppBar(<ProjectForm {...props} />)}
+      component={props => withAppBar(
+        <Provider projectStore={projectStore}>
+          <ProjectForm {...props} />
+        </Provider>
+      )}
     />
     <Route exact path="/project/form/:id"
-      component={props => withAppBar(<ProjectForm {...props} />)}
+      component={props => withAppBar(
+        <Provider projectStore={projectStore}>
+          <ProjectForm {...props} />
+        </Provider>
+      )}
     />
     <Route exact path="/users"
-      component={props => withAppBar(<UserList {...props} />)}
+      component={props => withAppBar(
+        <Provider userStore={userStore}>
+          <UserList {...props} />
+        </Provider>
+      )}
     />
     <Route exact path="/user/form"
-      component={props => withAppBar(<UserForm {...props} />)}
+      component={props => withAppBar(
+        <Provider userStore={userStore}>
+          <UserForm {...props} />
+        </Provider>
+      )}
     />
   </Switch>
 );
