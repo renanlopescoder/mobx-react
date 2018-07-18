@@ -1,7 +1,7 @@
 
 # MobX React
 
-![MobX React logo](http://mobx-react.herokuapp.com/static/media/mobx-react-logo.20a9fc8d.png)
+![MobX React logo](https://cdn-images-1.medium.com/max/1000/1*fVyLVvnbisXOgh1v3EhTrg.png)
 
 - Front End with React, MobX and mobx-state-tree
 
