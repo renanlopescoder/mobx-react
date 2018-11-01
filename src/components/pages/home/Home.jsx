@@ -1,9 +1,9 @@
-import React from 'react';
-import { Grid, Col, Row } from 'react-flexbox-grid';
-import { CardTitle, CardText, List, ListItem, ListSubHeader } from 'react-toolbox';
+import React from 'react'
+import { Grid, Col, Row } from 'react-flexbox-grid'
+import { CardText, List, ListItem, ListSubHeader } from 'react-toolbox'
 
-import { Card } from '../../components';
-import { SessionService } from '../../services';
+import { Card } from '../../atoms'
+import { SessionService } from '../../../services'
 
 class Home extends React.Component {
   constructor(props) {

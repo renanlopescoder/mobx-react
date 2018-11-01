@@ -1,7 +1,7 @@
-import React from 'react';
-import { ProgressBar } from 'react-toolbox';
+import React from 'react'
+import { ProgressBar } from 'react-toolbox'
 
-import style from './style.css';
+import style from './loader.css'
 
 class Loader extends React.Component {
   render() {
@@ -9,8 +9,8 @@ class Loader extends React.Component {
       this.props.loading ?
         <ProgressBar className={style.center} type='circular' mode='indeterminate' />
       : this.props.children
-    );
-  };
-};
+    )
+  }
+}
 
-export default Loader;
+export default Loader

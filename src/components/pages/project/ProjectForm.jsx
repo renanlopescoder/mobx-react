@@ -5,16 +5,12 @@ import {
   Input,
   CardTitle,
   CardText,
-  DatePicker,
-  Dropdown,
-  Autocomplete,
   Button,
   Snackbar,
 } from 'react-toolbox'
-import { Link } from 'react-router-dom'
 
-import color from '../../shared/colors.css'
-import { Card } from '../../components'
+import color from '../../../shared/colors.css'
+import { Card } from '../../atoms'
 
 @inject('projectStore')
 @observer

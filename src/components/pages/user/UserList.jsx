@@ -1,17 +1,17 @@
-import React from 'react';
-import { inject, observer } from 'mobx-react';
-import { Grid } from 'react-flexbox-grid';
-import { CardTitle, CardText, List, ListItem, ListSubHeader } from 'react-toolbox';
+import React from 'react'
+import { inject, observer } from 'mobx-react'
+import { Grid } from 'react-flexbox-grid'
+import { CardText, List, ListItem, ListSubHeader } from 'react-toolbox'
 
-import { Loader, Card } from '../../components';
+import { Loader, Card } from '../../atoms'
 
 @inject('userStore')
 @observer
 class UserList extends React.Component {
   constructor(props) {
-    super(props);
-    props.userStore.fetchUserList();
-  };
+    super(props)
+    props.userStore.fetchUserList()
+  }
 
   render() {
     return (
@@ -35,8 +35,8 @@ class UserList extends React.Component {
           </CardText>
         </Card>
       </Grid>
-    );
-  };
-};
+    )
+  }
+}
 
-export default UserList;
+export default UserList

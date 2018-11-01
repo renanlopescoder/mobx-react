@@ -1,10 +1,18 @@
-import React from 'react';
-import { inject, observer } from 'mobx-react';
-import { Card, CardTitle, CardText, Input, Button, Snackbar, Tabs, Tab } from 'react-toolbox';
-import { Grid, Row, Col } from 'react-flexbox-grid';
+import React from 'react'
+import { inject, observer } from 'mobx-react'
+import {
+  Card,
+  CardText,
+  Input,
+  Button,
+  Snackbar,
+  Tabs,
+  Tab
+} from 'react-toolbox'
+import { Grid, Row, Col } from 'react-flexbox-grid'
 
-import { Loader } from '../../components'
-import style from './style.css';
+import { Loader } from '../../atoms'
+import style from './style.css'
 
 @inject('userStore')
 @observer
@@ -18,38 +26,38 @@ class LoginView extends React.Component {
     tabIndex: 0,
     snackbarActive: false,
     snackbarMessage: '',
-  };
+  }
 
   signin() {
     this.props.userStore.signin(this.state.email, this.state.password).then(
       success => this.props.history.push('/home')
     ).catch((error) => {
-      this.setState({ snackbarActive: true, snackbarMessage: 'Login or password mismatch' });
-    });
-  };
+      this.setState({ snackbarActive: true, snackbarMessage: 'Login or password mismatch' })
+    })
+  }
 
   signup() {
-    this.props.userStore.signup(this.state).then(
-      success => this.setState({tabIndex: 0})
-    ).catch((error) => {
-      this.setState({ snackbarActive: true, snackbarMessage: 'Error to create your user' });
-    });
-  };
+    this.props.userStore.signup(this.state)
+      .then(() => this.setState({tabIndex: 0}))
+      .catch(
+        () => this.setState({ snackbarActive: true, snackbarMessage: 'Error to create your user' })
+      )
+  }
 
   handleState(field, value) {
-    const newState = this.state;
-    newState[field] = value;
-    this.setState(newState);
-  };
+    const newState = this.state
+    newState[field] = value
+    this.setState(newState)
+  }
 
   closeSnackbar = () => {
-    this.setState({ snackbarActive: false });
-  };
+    this.setState({ snackbarActive: false })
+  }
 
   keyPress = (e) => {
     if (e.key == "Enter")
-      this.signin();
-  };
+      this.signin()
+  }
 
   inputJSX = (attribute, label, icon) => (
     <Row>
@@ -65,11 +73,11 @@ class LoginView extends React.Component {
         />
       </Col>
     </Row>
-  );
+  )
 
   handleTabChange = (index) => {
-    this.setState({tabIndex: index});
-  };
+    this.setState({tabIndex: index})
+  }
 
   render() {
     return (
@@ -113,8 +121,8 @@ class LoginView extends React.Component {
         </Row>
         <Snackbar action='Close' label={this.state.snackbarMessage} onClick={this.closeSnackbar} active={this.state.snackbarActive} type='warning' />
       </Grid>
-    );
-  };
-};
+    )
+  }
+}
 
-export default LoginView;
+export default LoginView

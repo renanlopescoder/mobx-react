@@ -3,18 +3,10 @@ import { inject, observer } from 'mobx-react'
 import { Row, Col, Grid } from 'react-flexbox-grid'
 import {
   Input,
-  CardTitle,
-  CardText,
-  DatePicker,
-  Dropdown,
-  Autocomplete,
   Button,
-  Snackbar,
-  IconButton,
 } from 'react-toolbox'
-import { Link } from 'react-router-dom'
 
-import color from '../../shared/colors.css'
+import color from '../../../shared/colors.css'
 
 @inject('projectStore')
 @observer

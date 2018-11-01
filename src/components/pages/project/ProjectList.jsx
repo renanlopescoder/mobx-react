@@ -1,12 +1,20 @@
-import React from 'react';
-import { inject, observer } from 'mobx-react';
-import { Link } from 'react-router-dom';
-import { Grid } from 'react-flexbox-grid';
-import { CardTitle, CardText, Table, TableHead, TableCell, TableRow, IconButton } from 'react-toolbox';
+import React from 'react'
+import { inject, observer } from 'mobx-react'
+import { Link } from 'react-router-dom'
+import { Grid } from 'react-flexbox-grid'
+import {
+  CardTitle,
+  CardText,
+  Table,
+  TableHead,
+  TableCell,
+  TableRow,
+  IconButton
+} from 'react-toolbox'
 
 import ProjectSearchForm from './ProjectSearchForm'
-import { Loader, Card, AddButton } from '../../components';
-import color from '../../shared/colors.css';
+import { Loader, Card, AddButton } from '../../atoms'
+import color from '../../../shared/colors.css'
 
 @inject('projectStore')
 @observer

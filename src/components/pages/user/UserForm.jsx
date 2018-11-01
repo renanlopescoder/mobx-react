@@ -1,29 +1,25 @@
-import React from 'react';
-import { inject, observer } from 'mobx-react';
-import { Row, Col, Grid } from 'react-flexbox-grid';
+import React from 'react'
+import { inject, observer } from 'mobx-react'
+import { Row, Col, Grid } from 'react-flexbox-grid'
 import {
   Input,
   CardTitle,
   CardText,
-  DatePicker,
-  Dropdown,
-  Autocomplete,
   Button,
   Snackbar,
   Avatar,
-} from 'react-toolbox';
-import { Link } from 'react-router-dom';
+} from 'react-toolbox'
 
-import color from '../../shared/colors.css';
-import style from './style.css';
-import { Card, Loader } from '../../components';
-import { SessionService } from '../../services';
+import color from '../../../shared/colors.css'
+import style from './style.css'
+import { Card, Loader } from '../../atoms'
+import { SessionService } from '../../../services'
 
 @inject('userStore')
 @observer
 class UserForm extends React.Component {
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
       _id: SessionService.get('_id'),
       username: SessionService.get('username'),
@@ -32,21 +28,21 @@ class UserForm extends React.Component {
       photo: SessionService.get('photo'),
       password: '',
       activeSnackbar: false,
-    };
-  };
+    }
+  }
 
   handleState = (field, value) => {
-    const newState = this.state;
-    newState[field] = value;
-    this.setState(newState);
-  };
+    const newState = this.state
+    newState[field] = value
+    this.setState(newState)
+  }
 
   handleSnackbarClick = () => {
-    this.setState({ activeSnackbar: false });
-  };
+    this.setState({ activeSnackbar: false })
+  }
 
   validForm() {
-    const { state } = this;
+    const { state } = this
     return (
       state._id !== '' &&
       state.username !== '' &&
@@ -54,14 +50,14 @@ class UserForm extends React.Component {
       state.email !== '' &&
       state.password !== '' &&
       state.photo !== ''
-    );
-  };
+    )
+  }
 
   validateForm = () => {
-    const valid = this.validForm();
-    this.setState({ activeSnackbar: !valid });
-    return valid;
-  };
+    const valid = this.validForm()
+    this.setState({ activeSnackbar: !valid })
+    return valid
+  }
 
   update() {
     if (this.validateForm()) {
@@ -79,7 +75,7 @@ class UserForm extends React.Component {
       type='warning'
       action='Close'
     />
-  );
+  )
 
   inputJSX = (value, label, type, state) => (
     <Input
@@ -89,7 +85,7 @@ class UserForm extends React.Component {
       onChange={change => this.handleState(state, change)}
       required
     />
-  );
+  )
 
   render() {
     return (
@@ -142,4 +138,4 @@ class UserForm extends React.Component {
   }
 }
 
-export default UserForm;
+export default UserForm

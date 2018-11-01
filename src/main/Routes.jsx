@@ -1,23 +1,30 @@
-import React from 'react';
-import { Switch, Route } from 'react-router-dom';
-import { Provider } from 'mobx-react';
+import React from 'react'
+import { Switch, Route } from 'react-router-dom'
+import { Provider } from 'mobx-react'
 
-import { Navbar } from '../components';
-import { ProjectList, ProjectForm, Login, UserList, UserForm, Home } from '../views';
+import Navbar from '../components/molecules'
+import {
+  ProjectList,
+  ProjectForm,
+  Login,
+  UserList,
+  UserForm,
+  Home
+} from '../components/pages'
 import {
   ProjectStore,
   UserStore,
-} from '../stores';
+} from '../stores'
 
-const projectStore = ProjectStore.create({ projects: {} });
-const userStore = UserStore.create({ users: {} });
+const projectStore = ProjectStore.create({ projects: {} })
+const userStore = UserStore.create({ users: {} })
 
 const withAppBar = jsxComponent => (
   <div>
     <Navbar title="Mobx React" />
     {jsxComponent}
   </div>
-);
+)
 
 const Routes = () => (
   <Switch>
@@ -65,6 +72,6 @@ const Routes = () => (
       )}
     />
   </Switch>
-);
+)
 
-export default Routes;
+export default Routes

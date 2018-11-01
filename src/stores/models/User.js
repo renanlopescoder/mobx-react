@@ -3,7 +3,7 @@ import { types } from 'mobx-state-tree';
 const User = types.model(
   'User',
   {
-    _id: types.maybe(types.identifier(types.string)),
+    _id: types.maybe(types.string),
     nickname : types.maybe(types.string),
     username: types.string,
     photo : types.maybe(types.string),

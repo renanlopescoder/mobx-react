@@ -1,0 +1,36 @@
+{
+  "env": {
+    "browser": true,
+    "es6": true,
+    "node": true,
+    "jest": true
+  },
+  "extends": [
+    "airbnb-base",
+    "plugin:react/recommended"
+  ],
+  "parser": "babel-eslint",
+  "plugins": [
+    "import",
+    "jsx-a11y",
+    "react"
+  ],
+  "rules": {
+    "semi": 0,
+    "no-console": "off" ,
+    "class-methods-use-this": 0,
+    "operator-linebreak": 0,
+    "no-nested-ternary": 0,
+    "quote-props": 0,
+    "no-param-reassign": 0,
+    "import/extensions": 0,
+    "no-extend-native" : 0,
+    "import/no-unresolved": 0,
+    "import/no-extraneous-dependencies": 0,
+    "react/jsx-uses-vars": [2],
+    "react/display-name": "off",
+    "react/prop-types": "off",
+    "eqeqeq": ["error", "always"],
+    "linebreak-style": 0
+  }
+}
