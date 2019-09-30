@@ -109,5 +109,8 @@
     "eslint-config-airbnb": "^16.1.0",
     "faker": "^4.1.0",
     "react-test-renderer": "^16.0.0"
+  },
+  "engines": {
+    "node": "11.10.0"
   }
 }
